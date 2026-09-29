@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.main-game {
+    position: relative;
+    border: solid 2px;
+    height: 500px;
+    width: 500px;
+}
+
+.end-game {
+    background-color: gray;
+    height: 505px;
+    width: 505px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+    text-align: center;
+}
+
+.snake {
+    background: rgba(0, 0, 0, 0);
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.restart-button {
+    background-color: rgb(0, 255, 0);
+    cursor: pointer;
+    height: 50px;
+    width: 120px;
+    border-radius: 10px;
+    transition: .5s;
+}
+
+.restart-button:hover {
+    background-color: rgb(0, 202, 0);
+    height: 55px;
+    width: 130px;
+}
+
+.snake-img {
+    height: 100%;
+    width: 100%;
+}
+
+.nav-game {
+    height: 30px;
+    border: solid 2px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 1px;
+}
+
+.fruit {
+    background-color: red;
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    position: absolute;
+}
+
+.backgroundIMG {
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
