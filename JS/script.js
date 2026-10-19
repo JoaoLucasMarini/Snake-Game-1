@@ -4,6 +4,7 @@ const snake = document.getElementById('snake');
 const fruit = document.getElementById('fruit');
 const pointsDisplay = document.getElementById("points");
 const endPoints = document.getElementById('totalPoints');
+const body = document.body;
 
 let leftPosition = 224;
 let topPosition = 230;
@@ -49,6 +50,8 @@ document.addEventListener('keydown', (e) => {
 
     switch (e.key) {
         case "ArrowLeft":
+        case "a":
+        case "A":
             clearInterval(rightInterval);
             clearInterval(upInterval);
             clearInterval(downInterval);
@@ -58,6 +61,8 @@ document.addEventListener('keydown', (e) => {
             }, speed);            
             break;
         case "ArrowRight":
+        case "d":
+        case "D":
                 clearInterval(leftInterval);
                 clearInterval(upInterval);
                 clearInterval(downInterval);
@@ -67,6 +72,8 @@ document.addEventListener('keydown', (e) => {
                 }, speed);
             break;
         case "ArrowUp":
+        case "w":
+        case "W":
             clearInterval(leftInterval);
             clearInterval(rightInterval);
             clearInterval(downInterval);
@@ -75,7 +82,9 @@ document.addEventListener('keydown', (e) => {
                 upArrow();
             }, speed);
             break;
-        case "ArrowDown":   
+        case "ArrowDown":
+        case "s":
+        case "S":       
             clearInterval(leftInterval);
             clearInterval(rightInterval);
             clearInterval(upInterval)
@@ -147,6 +156,16 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function darkMode() {
+    if (body.style.backgroundColor === "white" || body.style.backgroundColor === "") {
+        body.style.backgroundColor = "black";
+        body.style.color = "white"
+        return;
+    }
+    body.style.backgroundColor = "white";
+    body.style.color = "black";
+}
+
 function verifyColision() {
     const fruitTop = parseFloat(fruit.style.top) || 0;
     const fruitLeft = parseFloat(fruit.style.left) || 0;
@@ -163,3 +182,4 @@ function verifyColision() {
 requestAnimationFrame(verifyColision);
 
 startGame();
+
